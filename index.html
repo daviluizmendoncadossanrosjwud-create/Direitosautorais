@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direitos Autorais | Pudimm</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            amber: '#f59e0b',
+                            gold: '#fbbf24',
+                            dark: '#09090b',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 relative overflow-x-hidden selection:bg-amber-500/30 selection:text-amber-200">
+
+    <!-- Elementos decorativos de fundo (Glow sutil) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden flex items-center justify-center">
+        <div class="w-[28rem] h-[28rem] sm:w-[40rem] sm:h-[40rem] bg-amber-500/10 rounded-full blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute -top-24 -left-24 w-72 h-72 bg-zinc-800/30 rounded-full blur-[100px]"></div>
+    </div>
+
+    <!-- Container Principal (Card Glassmorphism) -->
+    <main class="relative z-10 w-full max-w-xl">
+        <article class="bg-zinc-900/60 backdrop-blur-xl border border-zinc-800/80 rounded-3xl p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-zinc-700/80">
+            
+            <!-- Cabeçalho com Ícone Estilizado -->
+            <div class="flex flex-col items-center text-center mb-6 sm:mb-8">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 border border-amber-500/30 flex items-center justify-center mb-5 shadow-inner">
+                    <!-- Ícone SVG de Escudo com Cadeado / Proteção Intelectual -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <rect x="9" y="11" width="6" height="5" rx="1"/>
+                        <path d="M10 11V9a2 2 0 1 1 4 0v2"/>
+                    </svg>
+                </div>
+
+                <!-- Badge da Marca -->
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium tracking-wider uppercase bg-zinc-800/90 text-amber-400 border border-zinc-700/70 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                    Propriedade Intelectual
+                </span>
+
+                <!-- Título Principal (Texto Exato Requisitado) -->
+                <h1 id="copyright-title" class="text-xl sm:text-2xl font-semibold tracking-tight text-white">
+                    © 2026 Pudimm. Todos os direitos reservados.
+                </h1>
+            </div>
+
+            <!-- Divisor Sutil -->
+            <div class="h-px w-full bg-gradient-to-r from-transparent via-zinc-800 to-transparent my-6"></div>
+
+            <!-- Corpo do Texto Legal (Texto Exato Requisitado) -->
+            <div class="bg-zinc-950/50 border border-zinc-800/60 rounded-2xl p-5 sm:p-6 mb-7">
+                <p id="copyright-body" class="text-sm sm:text-base text-zinc-300 leading-relaxed text-center sm:text-left font-normal">
+                    Este projeto é propriedade intelectual de Pudimm. É proibida a cópia, reprodução, distribuição, modificação ou utilização comercial não autorizada de seus conteúdos, códigos, interfaces, imagens e demais materiais originais.
+                </p>
+            </div>
+
+            <!-- Área de Ações (Botão de Copiar + Status) -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-2 text-xs text-zinc-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-zinc-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M14.83 14.83a4 4 0 1 1 0-5.66"/>
+                    </svg>
+                    <span>Protegido pelas leis de direitos autorais</span>
+                </div>
+
+                <!-- Botão Prático de Copiar -->
+                <button 
+                    id="copy-btn" 
+                    type="button"
+                    onclick="copyCopyrightText()"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-medium bg-zinc-100 text-zinc-950 hover:bg-white active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-200 shadow-md cursor-pointer"
+                    aria-label="Copiar texto de direitos autorais"
+                >
+                    <!-- Ícone Copiar -->
+                    <svg id="icon-copy" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                        <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+                    </svg>
+                    <!-- Ícone Check (Oculto inicialmente) -->
+                    <svg id="icon-check" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-emerald-700 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    <span id="copy-btn-text">Copiar aviso</span>
+                </button>
+            </div>
+        </article>
+
+        <!-- Rodapé discreto opcional -->
+        <footer class="mt-6 text-center">
+            <p class="text-xs text-zinc-600 tracking-wide">
+                Documento Legal Oficial &bull; <span class="text-zinc-400 font-medium">Pudimm</span>
+            </p>
+        </footer>
+    </main>
+
+    <!-- Toast de Notificação Flutuante (Alternativa elegante ao alert) -->
+    <div 
+        id="toast-notification" 
+        role="status" 
+        aria-live="polite"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-zinc-800/95 backdrop-blur-md border border-emerald-500/40 text-zinc-100 text-xs sm:text-sm font-medium shadow-2xl opacity-0 translate-y-4 pointer-events-none transition-all duration-300"
+    >
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>Texto copiado para a área de transferência!</span>
+    </div>
+
+    <!-- Script de Interatividade -->
+    <script>
+        /**
+         * Copia o texto exato dos direitos autorais para a área de transferência
+         * e fornece feedback visual imediato no botão e via notificação toast.
+         */
+        let resetTimeout = null;
+
+        function copyCopyrightText() {
+            const titleText = document.getElementById('copyright-title').innerText.trim();
+            const bodyText = document.getElementById('copyright-body').innerText.trim();
+            const fullText = `${titleText}\n\n${bodyText}`;
+
+            // Cria um elemento textarea temporário para garantir compatibilidade máxima (inclusive em iframes)
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = fullText;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            tempTextArea.style.top = '0';
+            document.body.appendChild(tempTextArea);
+            
+            tempTextArea.focus();
+            tempTextArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    triggerSuccessFeedback();
+                }
+            } catch (err) {
+                console.error('Não foi possível copiar o texto:', err);
+            } finally {
+                document.body.removeChild(tempTextArea);
+            }
+        }
+
+        /**
+         * Atualiza o estado visual do botão e exibe o toast de confirmação.
+         */
+        function triggerSuccessFeedback() {
+            const btn = document.getElementById('copy-btn');
+            const btnText = document.getElementById('copy-btn-text');
+            const iconCopy = document.getElementById('icon-copy');
+            const iconCheck = document.getElementById('icon-check');
+            const toast = document.getElementById('toast-notification');
+
+            // Atualiza estilo do botão para estado "Copiado!"
+            btn.classList.remove('bg-zinc-100', 'text-zinc-950', 'hover:bg-white');
+            btn.classList.add('bg-emerald-400', 'text-zinc-950', 'hover:bg-emerald-300');
+            
+            iconCopy.classList.add('hidden');
+            iconCheck.classList.remove('hidden');
+            btnText.innerText = 'Copiado!';
+
+            // Exibe o toast flutuante
+            toast.classList.remove('opacity-0', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            // Limpa temporizador anterior caso o usuário clique múltiplas vezes
+            if (resetTimeout) {
+                clearTimeout(resetTimeout);
+            }
+
+            // Restaura o estado original após 2.5 segundos
+            resetTimeout = setTimeout(() => {
+                btn.classList.remove('bg-emerald-400', 'hover:bg-emerald-300');
+                btn.classList.add('bg-zinc-100', 'hover:bg-white');
+                
+                iconCheck.classList.add('hidden');
+                iconCopy.classList.remove('hidden');
+                btnText.innerText = 'Copiar aviso';
+
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-4');
+            }, 2500);
+        }
+    </script>
+</body>
+  </html>
